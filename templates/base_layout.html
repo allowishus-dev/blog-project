@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <header class="wrapper">
     <h1>
       <a href="{% url 'home' %}"><img src="{% static 'logo.png' %}" class="logo" /></a>
     </h1>
@@ -24,13 +24,17 @@
             <button type="submit">Logout</button>
           </form>
         </li>
-        <li><a href="{% url 'articles:create' %}" class="highlight">Create Article</a></li>
+        <li>
+          <a href="{% url 'articles:create' %}" class="highlight">Create Article</a>
+        </li>
         {% else %}
         <li><a href="{% url 'loginapp:login' %}">Login</a></li>
         <li><a href="{% url 'loginapp:signup' %}">Signup</a></li>
         {% endif %}
       </ul>
     </nav>
+  </header>
+  <div class="wrapper">
     {% block content %} {% endblock %}
   </div>
 </body>

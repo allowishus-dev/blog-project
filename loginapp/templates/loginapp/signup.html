@@ -1,51 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Todo APP</title>
-</head>
-<body>
-    <h1>Sign up</h1>
-    
-    {% load static %}
+{% extends 'base_layout.html' %} {% block content %}
+<h1>Sign up</h1>
 
-    <form action="{% url 'loginapp:signup' %}" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <label for="user">Username</label>
-        <input type="text" id="user" name="user" placeholder="Username">
-        <br />
-        <label for="profile-image-file">Profile image</label>
-        <img style="width: 42px; height: 42:px;object-fit: cover;" id="profile-image-src" src="{% static 'profile_pic.png' %}">
-        <input type="file" class="custom-file-input" name="profile-image-file" id="profile-image-file">
-        <br />
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" placeholder="Email">
-        <br />
-        <label for="firstname">First name</label>
-        <input type="text" id="firstname" name="firstname" placeholder="First name">
-        <br />
-        <label for="lastname">Last name</label>
-        <input type="text" id="lastname" name="lastname" placeholder="Last name">
-        <br />
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Password">
-        <br />
-        <label for="confirm_password">Confirm password</label>
-        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password">
-        <br />
-        <button>Sign up</button>
-    </form>
+{% load static %}
 
-    <span>
-        <a href="{% url 'loginapp:login' %}">Login</a>
-    </span>
+<form class="site-form" action="{% url 'loginapp:signup' %}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% if error %}
+  <p class="error">{{ error }} {% endif %}</p>
+  {% if success %}
+  <p class="success">{{ success }} {% endif %}</p>
+  <label for="user">Username</label>
+  <input type="text" id="user" name="user" placeholder="Username" />
+  <br />
+  <label for="profile-image-file">Profile image</label>
+  <img style="width: 42px; height: 42:px;object-fit: cover;" id="profile-image-src"
+    src="{% static 'profile_pic.png' %}" />
+  <input type="file" class="custom-file-input" name="profile-image-file" id="profile-image-file" />
+  <br />
+  <label for="email">Email</label>
+  <input type="text" id="email" name="email" placeholder="Email" />
+  <br />
+  <label for="firstname">First name</label>
+  <input type="text" id="firstname" name="firstname" placeholder="First name" />
+  <br />
+  <label for="lastname">Last name</label>
+  <input type="text" id="lastname" name="lastname" placeholder="Last name" />
+  <br />
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password" placeholder="Password" />
+  <br />
+  <label for="confirm_password">Confirm password</label>
+  <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password" />
+  <br />
+  <button>Sign up</button>
+</form>
 
-    {% if error %} <p class="error"> {{ error }} {% endif %}</p>
-    {% if success %} <p class="success"> {{ success }} {% endif %}</p>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="{% static 'js/loginapp/app.js' %}"></script>
-</body>
-</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{% static 'js/loginapp/app.js' %}"></script>
+{% endblock %}
