@@ -114,6 +114,7 @@ nav button {
     margin: 0;
     right: 0;
     color: #0f121f;
+    /* height: 36px; */
 }
 
 .article h2 {
@@ -179,4 +180,10 @@ p.error {
     font-size: 1.1em;
     border-radius: 4px;
     padding: 10px;
+}
+.profile_img {
+    margin: -10px -10px -14px 10px;
+    width: 46px;
+    height: 46px;
+    background-color: #bcc1c8;
 }

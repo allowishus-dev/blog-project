@@ -7,7 +7,7 @@
       <h2 class="title"> {{ article.title }}</h2>
       <p>{{ article.snippet }}</p>
       <p>{{ article.date }}</p>
-      <p class="author">writen by: {{ article.author.username }}</p>
+      <p class="author">writen by: {{ article.author.username }}<img class="profile_img" src="{{article.author.userprofile.profile_image.url}}" /></p>
     </a>
   </div>
   {% endfor %}
