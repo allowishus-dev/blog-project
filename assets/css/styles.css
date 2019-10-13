@@ -160,11 +160,17 @@ a.highlight {
     color: white;
 }
 
-.error {
+.error, .success {
     margin: 40px auto;
     color: #bbb;
     font-size: 0.9em;
     padding: 10px;
+}
+
+p.success {
+    border: 1px solid #258100;
+    color: #258100;
+    margin: 10px 0;
 }
 
 p.error {
@@ -186,4 +192,10 @@ p.error {
     width: 46px;
     height: 46px;
     background-color: #bcc1c8;
+}
+#profile-image-src {
+    margin-top: 20px;
+}
+#profile-image-file {
+    display: inline;
 }

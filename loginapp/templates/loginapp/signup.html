@@ -12,10 +12,12 @@
   <label for="user">Username</label>
   <input type="text" id="user" name="user" placeholder="Username" />
   <br />
-  <label for="profile-image-file">Profile image</label>
-  <img style="width: 42px; height: 42:px;object-fit: cover;" id="profile-image-src"
-    src="{% static 'profile_pic.png' %}" />
-  <input type="file" class="custom-file-input" name="profile-image-file" id="profile-image-file" />
+  <label for="signup-image">Profile image</label>
+  <div class="signup-image">
+    <img style="width: 42px; height: 42:px;object-fit: cover;" id="profile-image-src"
+      src="{% static 'profile_pic.png' %}" />
+    <input type="file" class="custom-file-input" name="profile-image-file" id="profile-image-file" />
+  </div>
   <br />
   <label for="email">Email</label>
   <input type="text" id="email" name="email" placeholder="Email" />

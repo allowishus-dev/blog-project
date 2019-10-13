@@ -19,6 +19,9 @@
       <ul>
         {% if user.is_authenticated %}
         <li>
+          <a href="{% url 'loginapp:change_password' %}">Change password</a>
+        </li>
+        <li>
           <form class="logout-link" action="{% url 'loginapp:logout' %}" method="post">
             {%csrf_token%}
             <button type="submit">Logout</button>
@@ -28,8 +31,8 @@
           <a href="{% url 'articles:create' %}" class="highlight">Create Article</a>
         </li>
         {% else %}
-        <li><a href="{% url 'loginapp:login' %}">Login</a></li>
-        <li><a href="{% url 'loginapp:signup' %}">Signup</a></li>
+          <li><a href="{% url 'loginapp:login' %}">Login</a></li>
+          <li><a href="{% url 'loginapp:signup' %}">Signup</a></li>
         {% endif %}
       </ul>
     </nav>
