@@ -82,6 +82,29 @@ nav button {
     padding-bottom: 40px;
 }
 
+.article .button-row {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.article button {
+    background: #2E9CCA;
+    border-left: 1px;
+    border-color: black;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 10px;
+    outline: 0;
+}
+
+.article button:hover {
+    background: #008eca;
+}
+
+.article button:active {
+    background: #00648f;
+}
+
 .article .author {
     padding: 10px;
     background: #2E9CCA;
@@ -90,7 +113,7 @@ nav button {
     bottom: 0;
     margin: 0;
     right: 0;
-    color: #0f121f
+    color: #0f121f;
 }
 
 .article h2 {

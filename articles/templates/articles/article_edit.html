@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="create-article">
+    <h2>Edit article</h2>
+    <form class="site-form" action="{% url 'articles:edit' slug=article.slug %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="edit">
+    </form>
+</div>
+{% endblock %}

@@ -4,6 +4,17 @@
     <h2>{{ article.title }}</h2>
     <p>{{ article.body }}</p>
     <p>{{ article.date }}</p>
+    {% if request.user == article.author %}
+      <div class="button-row">
+        <form action="{% url 'articles:delete' slug=article.slug %}" method="post">
+          {% csrf_token %}
+          <button>Delete</button>
+        </form>
+        <form action="{% url 'articles:edit' slug=article.slug %}" method="get">
+          <button>Edit</button>
+        </form>
+      </div>
+    {% endif %}
   </div>
 </div>
 {% endblock %}
