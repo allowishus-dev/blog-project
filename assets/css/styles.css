@@ -87,7 +87,8 @@ nav button {
     flex-direction: row-reverse;
 }
 
-.article button {
+.article button,
+input[type=submit] {
     background: #2E9CCA;
     border-left: 1px;
     border-color: black;
@@ -97,11 +98,13 @@ nav button {
     outline: 0;
 }
 
-.article button:hover {
+.article button:hover,
+input[type=submit] {
     background: #008eca;
 }
 
-.article button:active {
+.article button:active,
+input[type=submit] {
     background: #00648f;
 }
 
@@ -160,7 +163,8 @@ a.highlight {
     color: white;
 }
 
-.error, .success {
+.error,
+.success {
     margin: 40px auto;
     color: #bbb;
     font-size: 0.9em;
@@ -187,15 +191,18 @@ p.error {
     border-radius: 4px;
     padding: 10px;
 }
+
 .profile_img {
     margin: -10px -10px -14px 10px;
     width: 46px;
     height: 46px;
     background-color: #bcc1c8;
 }
+
 #profile-image-src {
     margin-top: 20px;
 }
+
 #profile-image-file {
     display: inline;
 }
